@@ -1,0 +1,58 @@
+<% layout("/layout/boilerplate") -%>
+<body class="bg-light">
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-sm w-100" style="max-width: 500px; border-radius: 1rem;">
+      <h4 class="text-center mb-4 text-primary">Edit Your Listing</h4>
+      <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required minlength="5" maxlength="100" pattern="^[A-Za-z0-9\s,.'-]{5,100}$">
+          <div class="invalid-feedback">Please enter a valid title (5–100 characters).</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea name="listing[description]" class="form-control" required minlength="20" maxlength="500"><%= listing.description %></textarea>
+          <div class="invalid-feedback">Description must be 20–500 characters long.</div>
+        </div>
+
+        <div class="mb-3">
+          original listing image<br />
+          <img src="<%= OriginalImageUrl %>" class="img-fluid rounded" >
+        </div>
+
+
+        <div class="mb-3">
+          <label class="form-label">Upload new image</label>
+          <input name="listing[image]" type="file" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Price</label>
+          <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required min="100" max="100000" step="50">
+          <div class="invalid-feedback">Enter a price between ₹100 and ₹100000.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Country</label>
+          <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required pattern="^[A-Za-z\s]{2,50}$">
+          <div class="invalid-feedback">Please enter a valid country name (letters only).</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Location</label>
+          <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required minlength="3" maxlength="100">
+          <div class="invalid-feedback">Location must be 3–100 characters.</div>
+        </div>
+
+        <div class="d-grid">
+          <button class="btn btn-primary">Update Listing</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+
+  
+</body>

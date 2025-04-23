@@ -1,0 +1,71 @@
+<% layout("/layout/boilerplate") -%>
+<body class="bg-light py-5">
+  <div class="container d-flex justify-content-center">
+    <div class="card shadow-lg p-4 w-100" style="max-width: 500px;">
+      <h4 class="mb-4 text-center text-primary">Create a New Listing</h4>
+      <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input name="listing[title]" type="text" class="form-control form-control-sm" placeholder="e.g., Cozy 2BHK Apartment" required minlength="5" maxlength="100" pattern="^[A-Za-z0-9\s,.'-]{5,100}$">
+          <div class="invalid-feedback">Please enter a valid title (5–100 characters).</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea name="listing[description]" class="form-control form-control-sm" rows="3" placeholder="Detailed description of the listing" required minlength="20" maxlength="500"></textarea>
+          <div class="invalid-feedback">Description must be 20–500 characters long.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Upload Listing Image</label>
+          <input name="listing[image]" type="file" class="form-control form-control-sm" required>
+          <div class="invalid-feedback">Please upload a valid image.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Price (₹ per night)</label>
+          <input name="listing[price]" type="number" class="form-control form-control-sm" placeholder="e.g., 1500" required min="100" max="100000" step="50">
+          <div class="invalid-feedback">Enter a valid price.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Country</label>
+          <input name="listing[country]" type="text" class="form-control form-control-sm" placeholder="e.g., India" required pattern="^[A-Za-z\s]{2,50}$">
+          <div class="invalid-feedback">Enter a valid country name (letters only).</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Location</label>
+          <input name="listing[location]" type="text" class="form-control form-control-sm" placeholder="e.g., Mumbai, Maharashtra" required minlength="3" maxlength="100">
+          <div class="invalid-feedback">Enter a valid location (3–100 characters).</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <select name="listing[category]" class="form-select form-select-sm" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Iconic cities">Iconic cities</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Amazing Pools">Amazing Pools</option>
+            <option value="Castle">Castle</option>
+            <option value="Camping">Camping</option>
+            <option value="Farms">Farms</option>
+            <option value="Hill Stations">Hill Stations</option>
+            <option value="arctic">Arctic</option>
+            <option value="Domes">Domes</option>
+            <option value="Boats">Boats</option>
+          </select>
+          <div class="invalid-feedback">Please select a category.</div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-sm btn-primary w-100">Add Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
