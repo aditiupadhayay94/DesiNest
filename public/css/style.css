@@ -33,7 +33,6 @@ h1{
     background-color: #efef1a;
     padding: 0.8rem 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -223,4 +222,24 @@ h1{
     background-color: #0b5ed7;
   }
 
-  
+  .search-btn{
+    background-color: #0d0ab2;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+
+}
+.search-btn:hover{
+    background-color: #0d0ab1;
+    color:#f6f4f4;
+}
+.search-btn i{
+ display: inline;
+ margin-left: 0.5rem;
+}  
+.search-inp{
+ color:white;
+ border-radius: 25px;
+ padding: 0.5rem 3rem 0.5rem 3rem;
+ font-size: 1rem;
+ text-align: center;
+}
