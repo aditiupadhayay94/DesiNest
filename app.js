@@ -92,7 +92,7 @@ main()
 
 // Routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'listings', 'Loader.html'));
+  res.sendFile(path.join(__dirname, 'views', 'listings', 'loader.html'));
 });
 
 app.use("/", user);
