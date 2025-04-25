@@ -15,4 +15,17 @@
         form.classList.add('was-validated')
       }, false)
     })
-  })()
+  })();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.querySelector("[data-scroll-container]");
+    
+    if (scrollContainer) {
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer,
+        smooth: true,
+        multiplier: 1.2, // Optional: adjust scroll speed
+        class: "is-reveal" // Optional: animation trigger class
+      });
+    }
+  });

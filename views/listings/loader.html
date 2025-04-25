@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DesiNest | Welcome Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      cursor: none;
+      overflow: hidden;
+      background-color: #111827;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+
+    .star {
+      position: fixed;
+      width: 8px; /* Increased size */
+      height: 8px; /* Increased size */
+      background-color: #efef1a;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 60;
+      opacity: 0.8;
+      animation: star-fade 1s ease-out forwards;
+    }
+
+    @keyframes star-fade {
+      to {
+        transform: translateY(-60px) scale(1.5); /* Increased scale */
+        opacity: 0;
+      }
+    }
+
+    /* Button hover color effect */
+    .btn-color-change {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-color-change:hover {
+      background-color: transparent;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="text-white h-screen relative">
+
+  <!-- Background -->
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560185008-5bf9e9e3f02c')] bg-cover bg-center opacity-60 z-0"></div>
+  <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
+
+  <!-- Compass Logo -->
+  <div class="absolute top-6 left-6 z-20 flex items-center space-x-2 fade-in delay-1 logo transition-colors duration-300">
+    <!-- Font Awesome Compass Icon -->
+    <i class="fas fa-compass text-4xl" style="color: #0d0ab2;"></i>
+    <span class="text-xl font-semibold logo-text" style="color: #0d0ab2;">DesiNest</span>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+    <h1 class="text-5xl md:text-6xl font-bold fade-in delay-1 headline transition-colors duration-300">
+      Welcome to <span class="headline-text"  style="color: #0d0ab2;">DesiNest</span>
+    </h1>
+    <p class="mt-4 text-xl md:text-2xl fade-in delay-2"  style="color: #0d0ab2;">Find your perfect stay, anywhere in India.</p>
+    <a href="/listings" id="exploreButton" class="mt-6 inline-block px-8 py-3 text-white font-semibold rounded-xl hover:bg-blue-900 transition-all duration-300 fade-in delay-3 btn-color-change" style="background-color: #0d0ab2;">
+      Explore Now
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Star scatter
+    function createStar(x, y) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = `${x}px`;
+      star.style.top = `${y}px`;
+      document.body.appendChild(star);
+
+      // Random drift
+      star.style.transform = `translate(${Math.random() * 40 - 20}px, ${Math.random() * -40 - 10}px) scale(${Math.random() + 0.5})`;
+
+      setTimeout(() => {
+        star.remove();
+      }, 1000);
+    }
+
+    document.addEventListener('mousemove', (e) => {
+  for (let i = 0; i < 5; i++) { // Increase 3 to 5+ for more density
+    const offsetX = (Math.random() - 0.5) * 30;
+    const offsetY = (Math.random() - 0.5) * 30;
+    createStar(e.clientX + offsetX, e.clientY + offsetY);
+  }
+});
+
+    // Color changer
+    function getRandomColor() {
+      const colors = ['#FBBF24', '#34D399', '#60A5FA', '#F472B6', '#F87171', '#A78BFA', '#FACC15', '#38BDF8'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    const logoText = document.querySelector('.logo-text');
+    const logoIcon = document.querySelector('.logo i');
+    const headlineText = document.querySelector('.headline-text');
+    const exploreButton = document.getElementById('exploreButton');
+
+    // Change color of logo and headline on hover
+    logoText.parentElement.addEventListener('mouseenter', () => {
+      logoText.style.color = getRandomColor();
+      logoIcon.style.color = getRandomColor();
+    });
+
+    headlineText.parentElement.addEventListener('mouseenter', () => {
+      headlineText.style.color = getRandomColor();
+    });
+
+    // Change button color on hover
+    exploreButton.addEventListener('mouseenter', () => {
+      exploreButton.style.backgroundColor = getRandomColor();
+      exploreButton.style.color = '#fff'; // Set the text color to white
+    });
+
+    exploreButton.addEventListener('mouseleave', () => {
+      exploreButton.style.backgroundColor = '#FBBF24'; // Reset to original color
+      exploreButton.style.color = '#000'; // Reset text color
+    });
+  </script>
+
+</body>
+</html>

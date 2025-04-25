@@ -1,24 +1,43 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding-top:0px;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #65c8e0, #4b9acf); /* Blue to light blue gradient */
+    background: linear-gradient(to right, #00090b, #000305); /* Blue to light blue gradient */
     min-height: 100vh;
   }
   
+  
+  .main-content {
+    flex: 1;
+  }
+  
+  /* Footer will stay at bottom naturally */
+  .footer {
+    background: yellow;
+    text-align: center;
+    padding: 1rem;
+  }
 
 h1{
     color:black
 }
 
+
+
 /* styles.css */
 
 /* General navbar styles */
 .navbar {
-    background-color: #db10a5;
+    background-color: #efef1a;
     padding: 0.8rem 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+     z-index: 1000;
   }
   
   /* Navbar brand (icon) styling */
@@ -60,12 +79,7 @@ h1{
   }
   
   /* General Reset and Fonts */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f8f8f8;
-}
+
 
 .container {
     max-width: 2200px;
@@ -76,7 +90,7 @@ body {
   .page-title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 7rem;
   }
   
   .listing-grid {
@@ -132,7 +146,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #e219c7;
+    background-color: #d8df13;
     font-size: 0.95rem;
     flex-wrap: wrap;
     gap: 1rem;
@@ -175,3 +189,38 @@ body {
     border-radius: 8px; /* optional for better design */
     margin-top: 1rem;
   }
+
+  .signup-container {
+    animation: fadeInUp 1s ease-in-out;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  }
+
+  .btn-success {
+    background-color: #0d6efd;
+    border: none;
+  }
+
+  .btn-success:hover {
+    background-color: #0b5ed7;
+  }
+
+  

@@ -1,5 +1,6 @@
 <% layout("/layout/boilerplate") -%>
 <body class="bg-light py-5">
+  <div data-scroll-container>
   <div class="container d-flex justify-content-center">
     <div class="card shadow-lg p-4 w-100" style="max-width: 500px;">
       <h4 class="mb-4 text-center text-primary">Create a New Listing</h4>
@@ -45,18 +46,18 @@
           <label class="form-label">Category</label>
           <select name="listing[category]" class="form-select form-select-sm" required>
             <option value="" disabled selected>Select a category</option>
-            <option value="Trending">Trending</option>
-            <option value="Rooms">Rooms</option>
-            <option value="Iconic cities">Iconic cities</option>
-            <option value="Mountain">Mountain</option>
-            <option value="Amazing Pools">Amazing Pools</option>
-            <option value="Castle">Castle</option>
-            <option value="Camping">Camping</option>
-            <option value="Farms">Farms</option>
-            <option value="Hill Stations">Hill Stations</option>
+            <option value="trending">Trending</option>
+            <option value="rooms">Rooms</option>
+            <option value="iconic-cities">Iconic cities</option>
+            <option value="mountains">Mountain</option>
+            <option value="amazing-pools">Amazing Pools</option>
+            <option value="castle">Castle</option>
+            <option value="camping">Camping</option>
+            <option value="farms">Farms</option>
+            <option value="hill-stations">Hill Stations</option>
             <option value="arctic">Arctic</option>
-            <option value="Domes">Domes</option>
-            <option value="Boats">Boats</option>
+            <option value="domes">Domes</option>
+            <option value="boats">Boats</option>
           </select>
           <div class="invalid-feedback">Please select a category.</div>
         </div>
@@ -66,6 +67,7 @@
         </div>
       </form>
     </div>
+  </div>
   </div>
 </body>
 </html>
