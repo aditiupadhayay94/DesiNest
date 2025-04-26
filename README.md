@@ -14,7 +14,7 @@ This project allows users to create and manage property listings, view them on m
 **Frontend**
 - EJS (Templating)
 - Tailwind CSS
-- GSAP (for Animations)
+
 
 **Backend**
 - Node.js
