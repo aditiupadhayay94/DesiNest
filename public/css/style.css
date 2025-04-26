@@ -15,7 +15,7 @@ body {
   
   /* Footer will stay at bottom naturally */
   .footer {
-    background: yellow;
+    background: #16D9EB;
     text-align: center;
     padding: 1rem;
   }
@@ -28,142 +28,183 @@ h1{
 
 /* styles.css */
 
-/* General navbar styles */
+/* Navbar container - dark style */
+.py-5{
+  padding-top: 0rem !important;
+}
 .navbar {
-    background-color: #efef1a;
-    padding: 0.8rem 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    top: 0;
-    left: 0;
-    width: 100%;
-     z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #16D9EB !important;
+  padding: 1rem 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #374151;
+}
+
+/* Brand logo text */
+.navbar-brand i {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #0d0ab1; 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand i:hover {
+  color: #22d3ee;
+  color: #28d63f;                   /* Darker on hover */
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* Nav links */
+.navbar-nav .nav-link {
+  color: #e5e7eb;
+  font-weight: 500;
+  margin: 0 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #1f2937;
+  color: #38bdf8;
+}
+
+/* Search input */
+.search-inp {
+  background-color: #000408;
+  color: #eaf1f8;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border: 1px solid #374151;
+  width: 100%;
+}
+
+.search-btn {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.search-btn i {
+  margin-left: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
   }
-  
-  /* Navbar brand (icon) styling */
-  .navbar-brand i {
-    font-size: 2rem; /* Makes icon bigger */
-    color: #007bff;
-    transition: transform 0.3s;
-  }
-  
-  .navbar-brand i:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Navbar links */
+
   .navbar-nav .nav-link {
-    color: #333;
-    font-weight: 500;
-    margin-left: 1rem;
-    transition: color 0.3s ease;
+    margin: 0.5rem 0;
   }
-  
-  .navbar-nav .nav-link:hover {
-    color: #007bff;
+
+  form.d-flex {
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  
-  /* Active link */
-  .navbar-nav .active {
-    color: #007bff;
-    font-weight: bold;
+
+  .search-btn {
+    width: 100%;
   }
-  
-  /* Responsive toggler button */
-  .navbar-toggler {
-    border-color: #ccc;
-  }
-  
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,..."); /* You can keep Bootstrap default or customize */
-  }
-  
-  /* General Reset and Fonts */
+}
+
 
 
 .container {
-    max-width: 2200px;
-    margin: auto;
-    padding: 40px;
-  }
-  
-  .page-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 7rem;
-  }
-  
-  .listing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactly 4 columns */
-    gap: 30px;
-  }
-  
-  
-  .listing-card {
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    background: #fff;
-  }
-  
-  .listing-card:hover {
-    transform: scale(1.03);
-  }
-  
-  .listing-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .listing-info {
-    padding: 16px;
-  }
-  
-  .listing-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-  
-  .description {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .price {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #000;
-  }
-  
+  max-width: 2200px;
+  margin: auto;
+  padding: 40px;
+  border: 3px solid #16D9EB;/* Shiny blue border */
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(22, 217, 235, 0.6); /*Glowing effect */
+  background: #000305; /* Dark background */
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #16D9EB; /* Vibrant blue title */
+  margin-bottom: 5rem;
+  text-shadow: 2px 2px 8px rgba(22, 217, 235, 0.7);
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.listing-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(22, 217, 235, 0.3); /* Light blue shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #060606;
+}
+
+.listing-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(22, 217, 235, 0.6); /* More glow on hover */
+}
+
+.listing-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.listing-info {
+  padding: 16px;
+}
+
+.listing-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #16D9EB; /* Heading in blue */
+}
+
+.description {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #0ef2f2; /* Bright blue for price */
+  text-shadow: 1px 1px 6px rgba(14, 242, 242, 0.6);
+}
+
 .f-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #d8df13;
+    background-color: #16D9EB;
     font-size: 0.95rem;
     flex-wrap: wrap;
     gap: 1rem;
   }
 
-  .navbar-brand i {
-    font-style: normal;               /* Prevent italic from <i> tag */
-    font-weight: 700;                 /* Bold text */
-    color: #0d0ab1;                   /* Vibrant red/pink */
-    font-size: 1.5rem;                /* Adjust size as needed */
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-  }
   
-  .navbar-brand i:hover {
-    color: #28d63f;                   /* Darker on hover */
-    cursor: pointer;
-  }
   
   .f-info-socials i {
     margin-right: 10px;
@@ -242,4 +283,130 @@ h1{
  padding: 0.5rem 3rem 0.5rem 3rem;
  font-size: 1rem;
  text-align: center;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#applyFilter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 1rem;
+}
+
+.filter {
+  color: aliceblue;
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+  opacity: 1;
+}
+
+.filter:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.tax-info {
+  display: none;
+}
+
+.filter p {
+  font-size: 0.8rem;
+}
+
+.tax-toggle {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(233, 244, 249);
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  margin-top: 2.5rem;
+}
+
+.tax-toggle label {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.form-check-input {
+  width: 2.5rem;
+  height: 1.5rem;
+} 
+
+@media (max-width: 768px) {
+
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+  }
+  
+  #applyFilter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 1rem;
+  }
+  
+  .filter {
+    color: aliceblue;
+    text-align: center;
+    margin-right: 0rem;
+    margin-top: 0.0rem;
+    opacity: 1;
+  }
+  
+  .filter:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  .tax-info {
+    display: none;
+  }
+  
+  .filter p {
+    font-size: 0.8rem;
+  }
+  
+  .tax-toggle {
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(233, 244, 249);
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    margin-top: 2.5rem;
+  }
+  
+  .tax-toggle label {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  .form-check-input {
+    width: 2.5rem;
+    height: 1.5rem;
+  } 
+
 }
